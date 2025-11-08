@@ -1,3 +1,8 @@
+# This script processes World Bank data for inflation (CPI) and unemployment.
+# It filters data for the United States (Country Code = "USA"),
+# reshapes the data from wide to long format, and merges both datasets
+# by year to prepare for comparative analysis with FRED data.
+
 year_cols <- grep("^(19|20)\\d{2}$", names(wb_inflation), value = TRUE)
 
 wb_inf_us <- wb_inflation %>%

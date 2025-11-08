@@ -1,3 +1,7 @@
+# This script reads all datasets used in the project from the /data folder.
+# It loads both FRED (US) and World Bank (International) datasets,
+# then checks their dimensions to confirm successful import.
+
 fred_inflation <- read_csv("data/T10YIE.csv")
 fred_unemploy  <- read_csv("data/UNRATE.csv")
 wb_inflation   <- read_csv("data/API_FP.CPI.TOTL.ZG_DS2_en_csv_v2_130173.csv", skip=4)

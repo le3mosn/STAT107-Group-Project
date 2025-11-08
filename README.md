@@ -24,3 +24,11 @@ FinalReport.Rmd — combines all text, code, and figures into a complete reprodu
 
 ###report
 FinalReport.pdf — final rendered report from the Rmd file, showing code output, analysis, and written interpretation.
+
+
+##Reproducibility Instructions
+1. Open the project file `FinalProject.Rproj` in RStudio.  
+2. Run `Scripts/00_requirements.R` to load all packages.  
+3. Knit `FinalReport.Rmd` to generate the final report (`FinalReport.pdf`).  
+4. All data paths are relative, so the project can be run on any computer as long as 
+the `data/` folder is in the same directory.
