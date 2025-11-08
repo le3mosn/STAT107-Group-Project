@@ -1,13 +1,26 @@
-Make sure the data and scripts folder are in the same directory as the FinalReport RMD.
+# Correlation between Inflation and Unemployment
 
-Data contains the csv files for all the data used in this project. 
-Downloads from the World Bank will contain an additional file with metadata, they are unnecessary and can be deleted. 
+## Overview
+This project investigates the relationship between inflation and unemployment using data from FRED and the World Bank.
+We test for correlation and estimate a simple linear model (Phillips-curve style) using monthly U.S. data and
+annual international data.
 
-pulled from the following sites: 
-UNRATE.csv - fred.stlouisfed.org/series/UNRATE
-T10YIE.csv - fred.stlouisfed.org/series/T10YIE
-API_FP.CPI.TOTL.ZG_DS2_en_csv_v2_130173.csv - data.worldbank.org/indicator/FP.CPI.TOTL.ZG
-API_SL.UEM.TOTL.NE.ZS_DS2_en_csv_v2_125709.csv - data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS
+##Files and Roles
+###data/ — datasets used in the project
+1.T10YIE.csv — 10-Year Breakeven Inflation Rate (FRED)
+2.UNRATE.csv — Unemployment Rate (FRED)
+3.API_FP.CPI.TOTL.ZG_DS2_en_csv_v2_130173.csv — World Bank inflation (consumer prices, %)
+4.API_SL.UEM.TOTL.NE.ZS_DS2_en_csv_v2_125709.csv — World Bank unemployment (% of labor force)
 
-Scripts contains functions used for requisite data and libraries, and the data manipulation for 
-plotting. 
+###Scripts/ — code organization
+00_requirements.R — installs/loads required packages (tidyverse, lubridate, broom, ggplot2)
+01_data_load.R — reads and cleans the datasets; aligns date/years
+11_Breakev_Inf_By_Unem.R — analysis & plots for FRED (breakeven inflation vs. unemployment)
+12_CPI_By_Unem.R — analysis & plots for World Bank (CPI vs. unemployment)
+
+###Rmd’s
+FinalReport.Rmd — combines all text, code, and figures into a complete reproducible report.
+
+
+###report
+FinalReport.pdf — final rendered report from the Rmd file, showing code output, analysis, and written interpretation.
